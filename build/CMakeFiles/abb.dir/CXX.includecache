@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/onofrezeka/College/EDB2/BinarySearchTree/include/bst.hpp
+iostream
+-
+chrono
+-
+sstream
+-
+math.h
+-
+
+/home/onofrezeka/College/EDB2/BinarySearchTree/src/bst.cpp
+../include/bst.hpp
+/home/onofrezeka/College/EDB2/BinarySearchTree/include/bst.hpp
+
