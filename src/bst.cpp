@@ -24,8 +24,18 @@ bool ABB::remover( int _valor_ )
 
 bool ABB::inserir( int _valor_ )
 {
+    // Ponteiro que será usado parar saber o nó pai do novo nó.
+    ABB::node_ * parente;
 
-    std::cout << "testando chamada\nRetornando true\n";
+    // Ponteiro que irá percorrer a árvore -> inicia no nó raiz.
+    ABB::node_ * runner = this.raiz_; 
+
+    while( runner != nullptr )
+    {
+        parente = runner;
+
+        return true;
+    }
 
     return true;
 
