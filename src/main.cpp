@@ -4,11 +4,11 @@ int main( void )
 {
     ABB tree;
 
-    ABB::node_ nodetest = tree.buscar( 0 );
+    ABB::node_ * nodetest = tree.buscar( tree.raiz_, 23, 0 );
 
-    tree.inserir(1);
-
-    tree.remover(1);
+    tree.inserir(34);
+    
+    ABB::node_ * nodetest2 = tree.buscar( tree.raiz_, 34, 0 );
 
     return 0;
 }

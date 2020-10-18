@@ -49,7 +49,7 @@ class ABB {
         
 
             // Vai buscar o valor passado e, caso esteja na árvore, retornará o nó que o contém.
-            node_ buscar( node_* no_aux, int _valor_, int f );
+            node_ * buscar( node_* no_aux, int _valor_, int f );
 
             // Realiza a busca para achar o valor que deve ser removido.
             // Retorna true caso realize com sucesso.
