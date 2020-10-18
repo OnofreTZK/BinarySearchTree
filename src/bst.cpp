@@ -1,11 +1,38 @@
 #include "../include/bst.hpp"
 
-ABB::node_ ABB::buscar( int _valor_ )
+ABB::node_ ABB::buscar( node_* no_aux, int _valor_, int f)
 {
 
-    std::cout << "testando chamada\nRetornando nó raiz\n";
+    // 1 = nó encontrado; 2 = chave não encontrada e nó aponta para arvore esquerda vazia
+    // 3 = chave não encontrada e nó aponta para arvore direita vazia
+
+    if (no_aux != nullptr){ //checando se a árvore é vazia
+        if (no_aux->chave == _valor_){ // checando se o nó atual contém a chave procurada
+            f = 1;
+        } else {
+            if (chave < no_aux->chave){
+                if (no_aux->esquerdo == nullptr){
+                    f = 2;
+                } else {
+                    no_aux = no_aux->esquerdo;
+                }
+            } else {
+                if (no_aux->direito == nullptr){
+                    f = 3;
+                } else {
+                    no_aux = no_aux->direito;
+                }
+            } if (f < 1){
+                buscar(no_aux, chave, f);
+            }
+        }
+    }
+    if ( f == 1){ return no_aux; } // chave encontrada.
+    else { return nullptr; } // abb vazia ou nó não existia na árvore
+
+    //std::cout << "testando chamada\nRetornando nó raiz\n";
     
-    return *raiz_;
+    //return *raiz_;
 
 }
 
