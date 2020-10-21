@@ -11,6 +11,14 @@ iostream
 -
 chrono
 -
+vector
+-
+utility
+-
+algorithm
+-
+random
+-
 sstream
 -
 math.h
