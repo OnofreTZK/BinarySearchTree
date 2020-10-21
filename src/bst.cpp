@@ -45,12 +45,53 @@ ABB::node_ * ABB::buscar( node_* no_aux, int _valor_, int f)
 
 
 
-bool ABB::remover( int _valor_ )
+ABB::node_ * ABB::remover( ABB::node_ * atual, int _valor_ )
 {
+    // Nó auxiliar para guardar um dos filhos do nó atual.
+    node_ * runner;
 
-    std::cout << "testando chamada\nRetornando true\n";
+    // vazia
+	if( atual == nullptr)
+    {
+	    return atual;
+	}
 
-    return true;
+    // Percorrendo a árvore até chega no nó a ser removido
+	if( _valor_ < atual->chave )
+    {
+		atual->esquerdo = remover( atual->esquerdo, _valor_ );
+
+	}
+    else if( _valor_ > atual->chave )
+    {
+
+		atual->direito = remover( atual->direito, _valor_ );
+
+	}
+    else
+    {
+        // Caso tenha só um filho a direita ou a esquerda.
+	    if( atual->esquerdo == nullptr)
+        {
+		    runner = atual->direito;
+			delete atual;
+			return runner;
+		}
+        else if( atual->direito == nullptr)
+        {
+			runner = atual->esquerdo;
+			delete atual;
+			return runner;
+        }
+
+        // Caso tenha 2 filhos.
+		runner = atual->pai->esquerdo;
+		atual->chave = runner->chave;
+		atual->direito = remover( atual->direito, runner->chave );
+			
+    }
+		
+    return atual;
 
 }
 
@@ -95,10 +136,12 @@ bool ABB::inserir( int _valor_ )
     else if( parente->chave < _valor_ )
     {
         parente->direito = new node_(_valor_);
+        parente->direito->pai = parente;
     }
     else
     {
         parente->esquerdo = new node_(_valor_);
+        parente->esquerdo->pai = parente;
     }
 
     return true;

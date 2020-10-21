@@ -25,10 +25,11 @@ class ABB {
 
             // Atributos --------------------------------------------------------------------------------------
 			struct node_{
-				int chave; // Valor -> para este projeto foi escolhido o tipo inteiro.
-				node_ *esquerdo = nullptr; // ponteiro para o filho esquerdo.
+				int chave; // Valor -> para este projeto foi escolhido o tipo inteiro.	
+				node_ *pai = nullptr; // ponteiro para o pai do nó atual.
+                node_ *esquerdo = nullptr; // ponteiro para o filho esquerdo.
 				node_ *direito = nullptr; // ponteiro para o filho direito.
-				node_ *pai; 
+
 
                 // Construtor padrão do nó.
 				node_(int chave = 0, node_* p = nullptr, node_* esq = nullptr, node_* dir = nullptr): 
@@ -53,7 +54,7 @@ class ABB {
 
             // Realiza a busca para achar o valor que deve ser removido.
             // Retorna true caso realize com sucesso.
-            bool remover( int _valor_ );
+            node_ * remover( node_ * atual, int _valor_ );
 
             // Realiza a busca para achar o local correto de inserćão de acordo com as especificaćões da ABB.
             // Retorna true caso consiga inserir.
