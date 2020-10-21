@@ -1,3 +1,0 @@
-/home/onofrezeka/College/EDB2/BinarySearchTree/build/CMakeFiles/rebuild_cache.dir
-/home/onofrezeka/College/EDB2/BinarySearchTree/build/CMakeFiles/edit_cache.dir
-/home/onofrezeka/College/EDB2/BinarySearchTree/build/CMakeFiles/abb.dir
